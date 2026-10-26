@@ -368,6 +368,35 @@ export const BESPOKE_THEME_PROFILES = Object.freeze({
       strokeWidth: 7,
     },
   }),
+  theme13: profile({
+    bg: '#FAFAFA',
+    surface: '#FFFFFF',
+    ink: '#555757',
+    muted: '#898989',
+    accent: '#D33941',
+    accent2: '#30B5C5',
+    line: '#DDDDDD',
+    fontDisplay: "'Microsoft YaHei','微软雅黑',Arial,sans-serif",
+    fontBody: "'Microsoft YaHei','微软雅黑',Arial,sans-serif",
+    fontMono: MONO,
+    pad: 94,
+    gap: 20,
+    radius: 4,
+    shadow: 'none',
+    mediaTreatment: {
+      radius: 4,
+      filter: 'none',
+      overlay: 'none',
+      border: '1px solid #DDDDDD',
+    },
+    chartTreatment: {
+      grid: '#DDDDDD',
+      label: '#898989',
+      series: ['#D33941', '#30B5C5', '#62B230', '#ED6D00'],
+      barRadius: 0,
+      strokeWidth: 3,
+    },
+  }),
 });
 
 export function getBespokeThemeProfile(themeKey) {

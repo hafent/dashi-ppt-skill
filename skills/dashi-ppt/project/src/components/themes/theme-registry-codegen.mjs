@@ -5,7 +5,7 @@
 //   - 裁剪版(renderDeck 按一份 deck 实际用到的主题集合,临时生成后用 esbuild 别名注入)。
 //
 // 这样一份单主题 deck 的 imported-theme-runtime.js 只内嵌它那一个主题的页面组件,
-// 而非全部 12 个主题(体积 ~1/12,且只暴露一个主题)。
+// 而非全部 13 个主题(体积 ~1/13,且只暴露一个主题)。
 import { overrides as theme02Overrides } from './theme02/overrides.js';
 import { overrides as theme03Overrides } from './theme03/overrides.js';
 import { overrides as theme04Overrides } from './theme04/overrides.js';
@@ -20,9 +20,10 @@ export const THEME_OVERRIDES = {
 export const ALL_THEME_KEYS = [
   'theme01', 'theme02', 'theme03', 'theme04', 'theme05', 'theme06',
   'theme07', 'theme08', 'theme09', 'theme10', 'theme11', 'theme12',
+  'theme13',
 ];
 
-// 各主题(可选)的图片槽 React context。没有 context 的主题(02/04/05/07/12)不出现在此表里,
+// 各主题(可选)的图片槽 React context。没有 context 的主题(02/04/05/07/12/13)不出现在此表里,
 // 它们在 wrapThemeImageProviders 中不包裹任何 Provider。valueKey 对应 client-runtime 传入的
 // values 对象字段:theme01Value / theme03Value / keyedValue / theme11Value。
 export const THEME_IMAGE_CONTEXTS = {

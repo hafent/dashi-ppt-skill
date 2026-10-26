@@ -55,7 +55,7 @@ node <skill-root>/scripts/check_latest_version.mjs
 - Deck 语言跟随用户沟通语言:非中文用户在 `goal.json` 顶层加 `"language": "en"`;全部文案字段用目标语言撰写,页面自带的默认中文文案(含结尾页“感谢阅读”类装饰字段)一律覆盖,不得残留中文。编辑器界面语言自动跟随打开者的系统语言,右上角可手动切换,无需在生成时处理。
 - 交付格式:默认 HTML;“生成 PPT”“做 PPT”“做一个 PPT”“制作 ppt”表示 PPT 呈现形态。只有明确 `PPTX`、`PowerPoint`、`可编辑 PPTX`、`导出 PPTX`、`PPT 格式` 或“格式/文件类型为 PPT/PPTX”时才交付 PPTX 文件。
 - PPTX 文件:仍先生成 HTML 并启动本机预览服务,再调用本机 HTTP 导出服务;最终只给 PPTX 文件路径或下载结果。
-- 当前可选风格: `theme01` 轻拟态风、`theme02` 炫光紫绿风、`theme03` 深浅代码风、`theme04` 玻璃糖果风、`theme05` 色谱图表风、`theme06` 深色图谱风、`theme07` 冷白调研风、`theme08` 黑金实验风、`theme09` 深蓝杂志风、`theme10` 金色指数风、`theme11` 高能增长风、`theme12` 声波霓虹风。
+- 当前可选风格: `theme01` 轻拟态风、`theme02` 炫光紫绿风、`theme03` 深浅代码风、`theme04` 玻璃糖果风、`theme05` 色谱图表风、`theme06` 深色图谱风、`theme07` 冷白调研风、`theme08` 黑金实验风、`theme09` 深蓝杂志风、`theme10` 金色指数风、`theme11` 高能增长风、`theme12` 声波霓虹风、`theme13` 品牌红汇报风。
 - 普通自动选择不选 `theme10`;只有用户明确指定,或金融/投资指数内容强相关且 inspect 确认可填时才用。
 <!-- theme-choice-hints:start -->
   - `theme01` 轻拟态风 | 适合: 产品介绍 / 企业汇报 | 人群: 创业团队 / 产品经理
@@ -70,6 +70,7 @@ node <skill-root>/scripts/check_latest_version.mjs
   - `theme10` 金色指数风 | 适合: 金融数据 / 投资报告 | 人群: 投资机构 / 金融分析师
   - `theme11` 高能增长风 | 适合: 增长复盘 / 商业计划 | 人群: 创业者 / 增长团队
   - `theme12` 声波霓虹风 | 适合: 音乐娱乐 / 潮流活动 | 人群: 娱乐品牌 / 活动策划
+  - `theme13` 品牌红汇报风 | 适合: 正式商务汇报 / 年度经营复盘 | 人群: 企业管理层 / 品牌与市场团队
 <!-- theme-choice-hints:end -->
 - 不使用旧 token、旧主题、旧媒体槽、旧风格分支或旧入场动画控制。
 - 选页先用 `npm --prefix <skill-root>/project run layout:query -- --theme <themePack> --role <role> --limit 8 --seed <randomSeed>:slide-<n>`;每个逻辑页的 3 个模板方案必须是结构指纹不同的 layout。相同 seed 和输入必须稳定,也不要固定只用未打散列表的前三条。跨逻辑页允许在候选稀缺时复用,由既有跨页 layout/组合/family 软惩罚降低重复。需要媒体槽时加 `--needs-media`、`--planned-images <n>`、`--provided-images <n>` 或 `--image-gen`。
